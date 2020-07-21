@@ -13,3 +13,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_pushButton_clicked()
+{
+    FILE* fp = fopen("map.dat","a");
+    fputs(ui->textEdit->toPlainText().toUtf8().toStdString().c_str(),fp);
+}
